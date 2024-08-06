@@ -23,7 +23,6 @@ def minOperations(n: int) -> int:
         remainder = int(val / dividor)
         val = remainder
         divlt.append(dividor)
-    print('div:', divlt, 'n:', n)
     if (len(divlt) == 1 and divlt[0] == n):
         return n
     return sum(divlt)
