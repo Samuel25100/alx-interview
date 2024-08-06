@@ -4,7 +4,7 @@ from typing import List
 
 
 def minOperations(n: int) -> int:
-    """calculates the fewest number of operations needed to result in exactly n"""
+    """calculates the fewest number of operations needed to result in n"""
     if n <= 0 or type(n) is not int:
         return 0
     dividor: int = 0
