@@ -18,7 +18,7 @@ def log_parser():
     try:
         for line in sys.stdin:
             li = line.split()
-            if (len(li) == 9 and li[8].isdigit()):
+            if (len(li) == 9 and li[7].isdigit()):
                 if (count == 9):
                     print(f"File size: {file_size}")
                     for key in out:
