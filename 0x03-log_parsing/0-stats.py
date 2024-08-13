@@ -19,11 +19,12 @@ def log_parser():
         for line in sys.stdin:
             li = line.split()
             if (len(li) == 9 and li[7].isdigit()):
-                if (count == 9):
+                if (count == 10):
                     print(f"File size: {file_size}")
-                    for key in out:
-                        if (out[key]):
-                            print(f"{key}: {out[key]}")
+                    for key, val in out.items():
+                        if (val):
+                            print(f"{key}: {val}")
+                    sys.stdout.flush()
                     count = 0
                 else:
                     count += 1
@@ -31,9 +32,11 @@ def log_parser():
                 file_size += int(li[8])
     except KeyboardInterrupt:
         print(f"File size: {file_size}")
-        for key in out:
-            if (out[key]):
-                print(f"{key}: {out[key]}")
+        for key, val in out.items():
+            if (val):
+                print(f"{key}: {val}")
+            sys.stdout.flush()
+        raise
 
 
 if __name__ == "__main__":
