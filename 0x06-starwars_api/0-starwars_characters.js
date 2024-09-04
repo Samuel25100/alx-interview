@@ -1,4 +1,6 @@
+#!/usr/bin/node
 const request = require('request');
+const num = process.argv[2];
 
 function fetchData(url) {
   return new Promise((resolve, reject) => {
@@ -15,7 +17,7 @@ function fetchData(url) {
 }
 
 async function parser() {
-	const body = await fetchData('https://swapi-api.alx-tools.com/api/films/3');
+	const body = await fetchData(`https://swapi-api.alx-tools.com/api/films/${num}`);
 	const data = JSON.parse(body)
 	for (const line of data["characters"]) {
 		const body1 = await fetchData(line);
